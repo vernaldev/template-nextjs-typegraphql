@@ -1,0 +1,23 @@
+FROM node:18.12
+
+# Set to non-root user
+USER node
+
+WORKDIR /app/backend
+
+ENV NODE_ENV=development
+
+# Copy dependencies
+COPY package.json yarn.lock ./
+
+# Install dependencies
+RUN yarn
+
+# Copy source code
+COPY . .
+
+# Generate Prisma client and TypeGraphQL schema and resolvers
+RUN yarn generate:prisma && yarn generate:schema
+
+# Apply migrations and start server
+CMD ["sh", "-c", "yarn db:migrate:prod && yarn dev & yarn prisma studio"]

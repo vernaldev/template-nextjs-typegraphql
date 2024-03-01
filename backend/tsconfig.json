@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "target": "es2018",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "jsx": "preserve",
+    "noEmit": false,
+    "isolatedModules": true,
+    "incremental": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/tests/*": ["./tests/*"]
+    }
+  },
+  "exclude": ["./dist/**/*", "./node_modules/**/*"],
+  "include": ["**/*.ts"],
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
+}
