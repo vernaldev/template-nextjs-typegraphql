@@ -2,8 +2,13 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
+  links:
+    - url: https://app.snyk.io/org/vernaldev
+      title: Snyk
+      icon: Dashboard
   annotations:
     backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: ${{ values.projectSlug | dump }}
 spec:
   type: service
   owner: ${{ values.owner | dump }}
